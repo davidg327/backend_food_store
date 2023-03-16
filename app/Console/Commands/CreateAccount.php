@@ -21,7 +21,7 @@ class CreateAccount extends Command
      *
      * @var string
      */
-    protected $description = 'Create sale day';
+    protected $description = 'Create account';
 
     /**
      * Execute the console command.

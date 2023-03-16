@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('sale_days', function (Blueprint $table) {
             $table->id();
             $table->timestamp('day');
-            $table->bigInteger('buy_product');
-            $table->bigInteger('product_input');
-            $table->bigInteger('sale_product');
-            $table->bigInteger('final_product_inventory');
-            $table->bigInteger('spent');
-            $table->bigInteger('sale');
-            $table->bigInteger('product_profit');
+            $table->bigInteger('buy_product'); //Productos comprados
+            $table->bigInteger('product_input'); //Entrada de productos no tocar
+            $table->bigInteger('sale_product'); //Productos vendidos
+            $table->bigInteger('final_product_inventory'); //Inventario final
+            $table->bigInteger('spent'); //Valor en pesos de lo que valio eso hoy
+            $table->bigInteger('sale'); //Valor en pesos de lo que se vendio
+            $table->bigInteger('product_profit'); //Ganancia del producto
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')
                 ->references('id')

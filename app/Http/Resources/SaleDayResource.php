@@ -16,17 +16,15 @@ class SaleDayResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'buy_product' => $this->buy_product,
-            'product_input' => $this->product_input,
-            'sale_product' => $this->sale_product,
-            'final_product_inventory' => $this->final_product_inventory,
-            'spent' => $this->spent,
-            'sale' => $this->sale,
-            'product_profit' => $this->product_profit,
-            'product' => [
-                'purchase_value' => $this->product->purchase_value,
-                'sale_value' => $this->product->sale_value,
-            ]
+            'buy_product' => intval($this->buy_product),
+            'product_input' => intval($this->product_input),
+            'sale_product' => intval($this->sale_product),
+            'final_product_inventory' => intval($this->final_product_inventory),
+            'purchase_value' => intval($this->product->purchase_value),
+            'sale_value' => intval($this->product->sale_value),
+            'spent' => intval($this->spent),
+            'sale' => intval($this->sale),
+            'product_profit' => intval($this->product_profit),
         ];
     }
 }
