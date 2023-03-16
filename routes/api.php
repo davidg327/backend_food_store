@@ -29,3 +29,6 @@ Route::get('sale_days', '\App\Http\Controllers\SaleDay\SaleDayIndexController@in
 Route::get('sale_days/{saleDay}', '\App\Http\Controllers\SaleDay\SaleDayShowController@show')->name('saleDay.show');
 Route::post('sale_day', '\App\Http\Controllers\SaleDay\SaleDayCreateController@create')->name('saleDay.create');
 Route::put('sale_day/{saleDay}', '\App\Http\Controllers\SaleDay\SaleDayUpdateController@update')->name('saleDay.update');
+
+//Cuenta general
+Route::put('general_account/{generalAccount}', '\App\Http\Controllers\GeneralAccount\GeneralAccountUpdateController@update')->name('generalAccount.update');

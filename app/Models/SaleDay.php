@@ -16,9 +16,9 @@ class SaleDay extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function accounts()
+    public function generalAccount()
     {
-        return $this->belongsToMany(Account::class);
+        return $this->belongsTo(GeneralAccount::class);
     }
 
 }

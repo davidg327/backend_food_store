@@ -17,7 +17,7 @@ class Kernel extends ConsoleKernel
             ->timezone('America/Bogota')
             ->at('1:00');*/
 
-        $schedule->command('create:account');
+        $schedule->command('create:general-account');
     }
 
     /**

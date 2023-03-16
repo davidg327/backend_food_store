@@ -25,6 +25,10 @@ return new class extends Migration
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products');
+            $table->unsignedBigInteger('general_account_id');
+            $table->foreign('general_account_id')
+                ->references('id')
+                ->on('general_accounts');
         });
     }
 

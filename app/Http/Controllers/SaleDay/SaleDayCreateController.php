@@ -28,6 +28,7 @@ class SaleDayCreateController extends Controller
         $saleDay->sale = $product->sale_value * $request->sale_product;
         $saleDay->product_profit = $saleDay->sale - $saleDay->spent;
         $saleDay->product_id = $request->product_id;
+        $saleDay->general_account_id = $request->general_account_id;
         $saleDay->save();
         $saleDayResource = SaleDayResource::make($saleDay);
         $name = 'Diario de producto '. $product->name. ' creado correctamente';

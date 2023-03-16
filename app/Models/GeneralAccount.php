@@ -10,4 +10,9 @@ class GeneralAccount extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    public function saleDays()
+    {
+        return $this->hasMany(SaleDay::class);
+    }
 }
