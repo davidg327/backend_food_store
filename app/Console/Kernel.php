@@ -12,7 +12,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        /*$schedule->command('create:account')
+            ->daily()
+            ->timezone('America/Bogota')
+            ->at('1:00');*/
+
+        $schedule->command('create:account');
     }
 
     /**
