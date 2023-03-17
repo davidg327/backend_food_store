@@ -34,6 +34,7 @@ class CreateGeneralAccount extends Command
         $generalAccount->product_expenses = 0;
         $generalAccount->total_sales = 0;
         $generalAccount->total_expenses = 0;
+        $generalAccount->total_broken = 0;
         $generalAccount->total_earnings = 0;
         $generalAccount->total_balance = 0;
         $generalAccount->save();

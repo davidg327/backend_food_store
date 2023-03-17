@@ -17,7 +17,8 @@ return new class extends Migration
             $table->bigInteger('daily_expenses'); //Gastos diarias
             $table->bigInteger('product_expenses'); //Gastos productos general
             $table->bigInteger('total_expenses'); //Total de gasto
-            $table->bigInteger('total_sales'); //Total de gasto
+            $table->bigInteger('total_broken'); //Total de vencidos
+            $table->bigInteger('total_sales'); //Total de ventas
             $table->bigInteger('total_earnings'); //Ganancias totales
             $table->bigInteger('total_balance'); // Total
         });

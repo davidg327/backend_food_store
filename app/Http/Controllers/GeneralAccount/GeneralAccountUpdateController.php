@@ -20,6 +20,10 @@ class GeneralAccountUpdateController extends Controller
             return $carry + $item;
         });
 
+        $productBroken = $generalAccount->saleDays()->pluck('broken')->reduce(function ($carry, $item) {
+            return $carry + $item;
+        });
+
         $productEarning = $generalAccount->saleDays()->pluck('product_profit')->reduce(function ($carry, $item) {
             return $carry + $item;
         });
@@ -27,6 +31,7 @@ class GeneralAccountUpdateController extends Controller
         $generalAccount->daily_expenses = $request->daily_expenses;
         $generalAccount->product_expenses = $productExpenses;
         $generalAccount->total_expenses = $generalAccount->daily_expenses + $generalAccount->product_expenses;
+        $generalAccount->total_broken = $productBroken;
         $generalAccount->total_sales = $productSale;
         $generalAccount->total_earnings = $productEarning;
         $generalAccount->total_balance = $generalAccount->total_sales - $generalAccount->total_expenses;

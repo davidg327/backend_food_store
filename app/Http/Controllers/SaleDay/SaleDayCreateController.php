@@ -23,9 +23,11 @@ class SaleDayCreateController extends Controller
             $saleDay->product_input = $saleDay->buy_product + $request->final_product_after_day;
         }
         $saleDay->sale_product = $request->sale_product;
-        $saleDay->final_product_inventory = $saleDay->product_input - $saleDay->sale_product;
+        $saleDay->broken_product = $request->broken_product;
+        $saleDay->final_product_inventory = $saleDay->product_input - $saleDay->sale_product -  $saleDay->broken_product;
         $saleDay->spent = $product->purchase_value * $request->buy_product;
         $saleDay->sale = $product->sale_value * $request->sale_product;
+        $saleDay->broken =  $product->purchase_value * $request->broken_product;
         $saleDay->product_profit = $saleDay->sale - $saleDay->spent;
         $saleDay->product_id = $request->product_id;
         $saleDay->general_account_id = $request->general_account_id;
