@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->bigInteger('purchase_value');
             $table->bigInteger('sale_value');
+            $table->string('image');
             $table->unsignedBigInteger('state_id');
             $table->foreign('state_id')
                 ->references('id')
