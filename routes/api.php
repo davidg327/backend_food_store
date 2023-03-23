@@ -32,3 +32,4 @@ Route::put('sale_day/{saleDay}', '\App\Http\Controllers\SaleDay\SaleDayUpdateCon
 
 //Cuenta general
 Route::put('general_account/{generalAccount}', '\App\Http\Controllers\GeneralAccount\GeneralAccountUpdateController@update')->name('generalAccount.update');
+Route::get('general_account/find_last', '\App\Http\Controllers\GeneralAccount\GeneralAccountIndexController@getFindLast')->name('generalAccount.index');

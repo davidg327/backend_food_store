@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sale_days', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('day');
+            $table->date('day');
             $table->bigInteger('buy_product'); //Productos comprados
             $table->bigInteger('product_input'); //Entrada de productos no tocar
             $table->bigInteger('sale_product'); //Productos vendidos

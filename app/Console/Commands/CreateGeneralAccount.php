@@ -29,7 +29,7 @@ class CreateGeneralAccount extends Command
     public function handle(): void
     {
         $generalAccount = new GeneralAccount();
-        $generalAccount->day = Carbon::now('America/Bogota');
+        $generalAccount->day = Carbon::now('America/Bogota')->toDateString();
         $generalAccount->daily_expenses = 0;
         $generalAccount->product_expenses = 0;
         $generalAccount->total_sales = 0;

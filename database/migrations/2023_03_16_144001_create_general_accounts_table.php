@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('general_accounts', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('day'); //Dia
+            $table->date('day'); //Dia
             $table->bigInteger('daily_expenses'); //Gastos diarias
             $table->bigInteger('product_expenses'); //Gastos productos general
             $table->bigInteger('total_expenses'); //Total de gasto
