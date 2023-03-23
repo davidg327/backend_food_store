@@ -15,7 +15,7 @@ class GeneralAccountIndexController extends Controller
         $generalAccount = GeneralAccount::where('day', $date)->first();
         $generalAccountResource = GeneralAccountResource::make($generalAccount);
         $data = [
-            'general account' => $generalAccountResource,
+            'data' => $generalAccountResource,
             'code' => 200,
         ];
         return response()->json($data);
