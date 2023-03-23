@@ -16,17 +16,15 @@ class SaleDayIndexController extends Controller
         return SaleDayResource::collection(SaleDay::all());
     }
 
-    public function getProductYesterday(Product $product, Request $request)
+    public function getProductYesterday(Request $request)
     {
-        $saleDay = SaleDay::where('day', $request->date)->first();
-        dd($saleDay);
-        /*$saleDayResource = SaleDayResource::make($saleDay);
-        $name = 'Diario de producto '. $product->name. ' creado correctamente';
+
+        $saleDay = SaleDay::where('day', $request->date)->where('product_id', $request->product_id)->first();
+        $saleDayResource = SaleDayResource::make($saleDay);
         $data = [
-            'message' => $name,
-            'product' => $saleDayResource,
+            'data' => $saleDayResource,
             'code' => 200,
         ];
-        return response()->json($data);*/
+        return response()->json($data);
     }
 }

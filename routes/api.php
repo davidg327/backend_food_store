@@ -29,7 +29,7 @@ Route::get('sale_days', '\App\Http\Controllers\SaleDay\SaleDayIndexController@in
 Route::get('sale_days/{saleDay}', '\App\Http\Controllers\SaleDay\SaleDayShowController@show')->name('saleDay.show');
 Route::post('sale_day', '\App\Http\Controllers\SaleDay\SaleDayCreateController@create')->name('saleDay.create');
 Route::put('sale_day/{saleDay}', '\App\Http\Controllers\SaleDay\SaleDayUpdateController@update')->name('saleDay.update');
-Route::get('sale_day_yesterday/{product}', '\App\Http\Controllers\SaleDay\SaleDayIndexController@getProductYesterday')->name('saleDayYesterday.index');
+Route::post('sale_day_yesterday', '\App\Http\Controllers\SaleDay\SaleDayIndexController@getProductYesterday')->name('saleDayYesterday.index');
 
 //Cuenta general
 Route::put('general_account/{generalAccount}', '\App\Http\Controllers\GeneralAccount\GeneralAccountUpdateController@update')->name('generalAccount.update');
