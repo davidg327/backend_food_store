@@ -34,7 +34,7 @@ class GeneralAccountUpdateController extends Controller
         $generalAccount->total_broken = $productBroken;
         $generalAccount->total_sales = $productSale;
         $generalAccount->total_earnings = $productEarning;
-        $generalAccount->total_balance = $generalAccount->total_sales - $generalAccount->total_expenses;
+        $generalAccount->total_balance = $generalAccount->total_sales - ($generalAccount->total_expenses + $generalAccount->total_broken);
         $generalAccount->save();
         $generalAccountResource = GeneralAccountResource::make($generalAccount);
         $data = [
