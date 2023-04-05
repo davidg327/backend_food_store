@@ -14,6 +14,7 @@ class ProductUpdateController extends Controller
         $product->name = $request->name;
         $product->purchase_value = $request->purchase_value;
         $product->sale_value = $request->sale_value;
+        $product->quantity = 0;
         $product->save();
         $productResource = ProductResource::make($product);
         $data = [

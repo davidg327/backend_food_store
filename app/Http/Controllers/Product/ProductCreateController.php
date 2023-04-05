@@ -17,6 +17,7 @@ class ProductCreateController extends Controller
         $product->purchase_value = $request->purchase_value;
         $product->sale_value = $request->sale_value;
         $product->state_id = State::where('name', State::EXISTING)->value('id');
+        $product->quantity = 0;
         $product->image = $request->url;
         $product->save();
         $productResource = ProductResource::make($product);
